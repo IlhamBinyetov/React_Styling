@@ -35,6 +35,15 @@ const App = () => {
     );
   }
 
+  
+    const [count, setCount] = useState(0);
+
+    const [oldColor, newColor] = useState(false);
+    function clickHandler (){
+      newColor(isColor => !isColor);
+    }
+  
+
   return (
     <div>
       <section id="goal-form">
@@ -50,6 +59,8 @@ const App = () => {
         ) // <p style={{ textAlign: 'center' }}>No goals found. Maybe add one?</p>
         } */}
       </section>
+      <p style={{color: oldColor? 'red':'black'}}>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)} onMouseEnter={clickHandler}>Arttır</button>
     </div>
   );
 };
